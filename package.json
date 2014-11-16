@@ -1,0 +1,15 @@
+{
+  "name": "widgiots",
+  "version": "0.1.0",
+  "description": "All Things Talk Widgets",
+  "main": "index.html",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gilles De Mey <gilles.de.mey@gmail.com>",
+  "license": "MIT"
+}

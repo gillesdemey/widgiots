@@ -1,0 +1,44 @@
+<link rel="import" href="../../vendor/polymer/polymer.html">
+<link rel="import" href="../../vendor/paper-toggle-button/paper-toggle-button.html">
+
+<!-- extend from paper-toggle-button -->
+<polymer-element name="att-toggle-button" extends="paper-toggle-button">
+
+  <template>
+    <!-- the paper toggle button template is fine, include its shadow DOM -->
+    <shadow></shadow>
+  </template>
+
+  <!-- this is the core library that will be shared between all widgets -->
+  <script src="../../src/core.js"></script>
+
+  <script>
+    Polymer('att-toggle-button', {
+
+      ready: function () {
+
+        // call super() to properly initialize the composed paper toggle button
+        this.super();
+
+        ATTClient.listen({
+          clientID : 'alan',
+          clientKey: 'alan',
+          assetID  : 'random-boolean-sensor'
+
+        // We need to bind the callback to our element object, since the 'this' context
+        // will be set to the window object (it goes through the Core file, the
+        // context changes)
+        // so .bind(this) will fix this for now.
+        }, this.onMessage.bind(this));
+
+      },
+
+      // when we receive data from the broker
+      onMessage: function(msg) {
+        this.checked = (msg === "true");
+      },
+
+    });
+  </script>
+
+</polymer-element>

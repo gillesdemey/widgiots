@@ -1,0 +1,29 @@
+{
+  "name": "widgiots",
+  "version": "0.1.0",
+  "authors": [
+    "Gilles De Mey <gilles.de.mey@gmail.com>"
+  ],
+  "description": "All Things Talk Widgets",
+  "main": "index.html",
+  "keywords": [
+    "widgets",
+    "iot"
+  ],
+  "license": "MIT",
+  "homepage": "http://gilles.demey.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sockjs-client": "~0.3.4",
+    "stomp-websocket": "~2.3.3",
+    "polymer": "Polymer/polymer#~0.5.1",
+    "paper-elements": "Polymer/paper-elements#~0.5.1"
+  }
+}
